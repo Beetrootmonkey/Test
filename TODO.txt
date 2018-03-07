@@ -1,0 +1,56 @@
+Things to implement (or at least TRY to implement):
+
+Easy:
+[ ] Custom generic items
+[ ] Custom food that give potion effects
+[ ] Custom burnable items
+[ ] Register items to the ore dict
+[ ] Create custom entity drops
+[ ] Create custom block drops
+[ ] Alter existing block drops
+[ ] Alter existing entity drops
+
+Medium:
+[ ] Custom tool and armor material
+[ ] Custom armor that uses a custom material
+[ ] Custom tools that uses a custom material
+[ ] Make it so custom armor and tools can be repaired
+[ ] Ability to remove/alter existing recipes
+[ ] Custom config file
+[ ] Ingame config
+[ ] Add blocks to world gen (Ore)
+[ ] Custom items with metadata
+[ ] Custom block with states
+[ ] Rebuild Skillz (give player mana, exp, money; give items $ value)
+[ ] Use stuff from other mods' APIs (like aspects from Thaumcraft)
+
+Hard:
+
+[ ] Custom entities
+[ ] Custom block models
+[ ] Custom enchantments
+[ ] Custom fluids
+[ ] Animated item sprites
+[ ] Animated block textures
+[ ] Layered item sprites
+[ ] Layered block textures
+[ ] Add custom logic/structures to world gen (Trees)
+[ ] Custom tile entities (double furnace, bigger chest) + GUI
+[ ] Custom HUD elements (mana bar, money)
+[ ] Custom GUI (dialogs)
+[ ] Custom machines (tile entities that use energy)
+[ ] Custom generators (tile entities that generate energy)
+[ ] Custom energy cables
+[ ] Custom item pipes
+[ ] Custom fluid pipes
+[ ] Implement MineTweaker support (for machine recipes, item $ value)
+[ ] Custom handler for JEI/NEI
+
+Mod Ideas:
+[ ] Base Mod for Ores, Metals, Components
+[ ] Library that lets the programmer easily save player specific data
+[ ] Mod that collects data about the player doing stuff (like mining blocks) and gives the player exp and levels
+[ ] Mod that alters minecraft radically to use player exp/lvls for various stuff (like determining droprates and dmg)
+[ ] Mod that gives items $ value and makes it so you can sell and buy items (similar to EE)
+[ ] Bridge for Botania/Thaumcraft
+[ ] Bridge for Immersive Engineering/Thaumcraft
