@@ -22,7 +22,7 @@ public class MyUtils {
 
 	public static final ModTab creativeTab = new ModTab();
 	
-	@SidedProxy(serverSide = "com.beetrootmonkey.myutils.proxy.CommonProxy", clientSide = "com.beetrootmonkey.myutils.proxy.ClientProxy")
+	@SidedProxy(serverSide = "com.beetrootmonkey.myutils.proxy.ServerProxy", clientSide = "com.beetrootmonkey.myutils.proxy.ClientProxy")
 	public static CommonProxy proxy;
 
 	@Mod.Instance(Reference.MOD_ID)
@@ -30,20 +30,16 @@ public class MyUtils {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		ConfigLoader.load(event);
-		ModItems.init();
-		ModBlocks.init();
-		MinecraftForge.EVENT_BUS.register(new DropHandler());
-		GameRegistry.registerFuelHandler(new FuelHandler());
+		proxy.preInit(event);
 	}
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
-		ModRecipes.addRecipes();
+		proxy.init(event);
 	}
 
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-
+		proxy.postInit(event);
 	}
 }
