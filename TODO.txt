@@ -9,6 +9,7 @@ Easy:
 [ ] Create custom block drops
 [ ] Alter existing block drops
 [ ] Alter existing entity drops
+[ ] Custom recipes
 
 Medium:
 [ ] Custom tool and armor material
@@ -22,7 +23,10 @@ Medium:
 [ ] Custom items with metadata
 [ ] Custom block with states
 [ ] Rebuild Skillz (give player mana, exp, money; give items $ value)
+[ ] Use recipes and items from other mods (without their API)
 [ ] Use stuff from other mods' APIs (like aspects from Thaumcraft)
+[ ] Use loot tables for entity/block drops (like a geode)
+[ ] Custom sounds
 
 Hard:
 
@@ -34,17 +38,22 @@ Hard:
 [ ] Animated block textures
 [ ] Layered item sprites
 [ ] Layered block textures
-[ ] Add custom logic/structures to world gen (Trees)
+[ ] Add custom logic/structures to world gen (trees, flowers)
 [ ] Custom tile entities (double furnace, bigger chest) + GUI
 [ ] Custom HUD elements (mana bar, money)
 [ ] Custom GUI (dialogs)
-[ ] Custom machines (tile entities that use energy)
-[ ] Custom generators (tile entities that generate energy)
+[ ] Custom items that use energy (like a drill)
+[ ] Custom items that store energy (like a capacitor/battery)
+[ ] Custom machines (tile entities that use energy, like a crusher)
+[ ] Custom generators (tile entities that generate energy, like a coal generator or solar panel)
 [ ] Custom energy cables
 [ ] Custom item pipes
 [ ] Custom fluid pipes
 [ ] Implement MineTweaker support (for machine recipes, item $ value)
-[ ] Custom handler for JEI/NEI
+[ ] Custom handler for JEI/NEI to show custom machine recipes and list of item $ value
+[ ] Custom world generator
+[ ] Custom dimension
+[ ] Custom minimap
 
 Mod Ideas:
 [ ] Base Mod for Ores, Metals, Components
