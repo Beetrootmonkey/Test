@@ -1,4 +1,4 @@
-Things to implement (or at least TRY to implement):
+Things I want to be able to implement:
 
 Easy:
 [ ] Custom generic items
@@ -12,7 +12,7 @@ Easy:
 [ ] Custom recipes
 
 Medium:
-[ ] Custom tool and armor material
+[ ] Custom tool and armor material ( "public static ToolMaterial FLINT = EnumHelper.addToolMaterial("FLINT", 1, 131, 4f, 1f, 5);" )
 [ ] Custom armor that uses a custom material
 [ ] Custom tools that uses a custom material
 [ ] Make it so custom armor and tools can be repaired
