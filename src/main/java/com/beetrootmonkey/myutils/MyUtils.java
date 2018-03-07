@@ -4,7 +4,7 @@ import com.beetrootmonkey.myutils.block.ModBlocks;
 import com.beetrootmonkey.myutils.client.ModTab;
 import com.beetrootmonkey.myutils.config.ConfigLoader;
 import com.beetrootmonkey.myutils.crafting.ModRecipes;
-import com.beetrootmonkey.myutils.drops.DropHandler;
+import com.beetrootmonkey.myutils.drops.DropHandlerEntity;
 import com.beetrootmonkey.myutils.item.ModItems;
 import com.beetrootmonkey.myutils.item.fuel.FuelHandler;
 import com.beetrootmonkey.myutils.proxy.CommonProxy;

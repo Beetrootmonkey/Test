@@ -1,21 +1,23 @@
 Things I want to be able to implement:
 
 Easy:
-[ ] Custom generic items
-[ ] Custom food that give potion effects
-[ ] Custom burnable items
-[ ] Register items to the ore dict
-[ ] Create custom entity drops
-[ ] Create custom block drops
-[ ] Alter existing block drops
-[ ] Alter existing entity drops
-[ ] Custom recipes
+[X] Custom generic items
+[X] Custom food that give potion effects
+[X] Custom burnable items
+[X] Register items to the ore dict
+[X] Create custom entity drops
+[X] Create custom block drops
+[X] Alter existing block drops
+[X] Alter existing entity drops
+[X] Custom recipes
+[X] Localization
 
 Medium:
-[ ] Custom tool and armor material ( "public static ToolMaterial FLINT = EnumHelper.addToolMaterial("FLINT", 1, 131, 4f, 1f, 5);" )
-[ ] Custom armor that use a custom material
-[ ] Custom tools that use a custom material
-[ ] Make it so custom armor and tools can be repaired
+[X] Custom tools
+[X] Custom armor
+[X] Custom tool material
+[X] Custom armor material
+[X] Make it so custom armor and tools can be repaired
 [ ] Ability to remove/alter existing recipes
 [ ] Custom config file
 [ ] Ingame config

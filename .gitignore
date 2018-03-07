@@ -40,3 +40,6 @@ run/logs/*
 run/config/*
 run/usercache.json
 run/config/*
+run/crash-reports/*
+*.gz
+run/journeymap/colorpalette.json

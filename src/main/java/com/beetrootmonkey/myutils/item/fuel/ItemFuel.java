@@ -1,8 +1,12 @@
 package com.beetrootmonkey.myutils.item.fuel;
 
+import com.beetrootmonkey.myutils.MyUtils;
+import com.beetrootmonkey.myutils.item.ItemBase;
+import com.beetrootmonkey.myutils.item.ItemModelProvider;
+
 import net.minecraft.item.Item;
 
-public class ItemFuel extends Item implements IFuel
+public class ItemFuel extends ItemBase implements IFuel 
 {
 	int burnTime;
 	
@@ -12,9 +16,9 @@ public class ItemFuel extends Item implements IFuel
 		return burnTime;
 	}
 	
-	public ItemFuel(int burnTime)
+	public ItemFuel(String name, int burnTime)
 	{
-		super();
+		super(name);
 		this.burnTime = burnTime;
 	}
 }
