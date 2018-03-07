@@ -13,8 +13,8 @@ Easy:
 
 Medium:
 [ ] Custom tool and armor material ( "public static ToolMaterial FLINT = EnumHelper.addToolMaterial("FLINT", 1, 131, 4f, 1f, 5);" )
-[ ] Custom armor that uses a custom material
-[ ] Custom tools that uses a custom material
+[ ] Custom armor that use a custom material
+[ ] Custom tools that use a custom material
 [ ] Make it so custom armor and tools can be repaired
 [ ] Ability to remove/alter existing recipes
 [ ] Custom config file
@@ -54,12 +54,13 @@ Hard:
 [ ] Custom world generator
 [ ] Custom dimension
 [ ] Custom minimap
+[ ] 1.12+ recipe book integration and progression (= advancements)
 
 Mod Ideas:
 [ ] Base Mod for Ores, Metals, Components
 [ ] Library that lets the programmer easily save player specific data
 [ ] Mod that collects data about the player doing stuff (like mining blocks) and gives the player exp and levels
 [ ] Mod that alters minecraft radically to use player exp/lvls for various stuff (like determining droprates and dmg)
-[ ] Mod that gives items $ value and makes it so you can sell and buy items (similar to EE)
-[ ] Bridge for Botania/Thaumcraft
-[ ] Bridge for Immersive Engineering/Thaumcraft
+[ ] Mod that gives items $ value and allows  players to sell and buy items (similar to EE)
+[ ] Bridge for Botania/Thaumcraft (similar to Forbidden Magic)
+[ ] Bridge for Immersive Engineering/Thaumcraft (similar to my old Thaumic Engineering)
