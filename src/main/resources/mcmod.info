@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "modid": "myutils",
+  "name": "MyUtils",
+  "description": "A collection of stuff I found Minecraft missed.",
+  "version": "1.0.0",
+  "mcversion": "1.10.2",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Beetrootmonkey"],
+  "credits": "The Forge and FML guys, for making this possible.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
