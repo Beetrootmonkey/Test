@@ -23,6 +23,7 @@ hs_err_pid*
 /bin/
 eclipse/.recommenders/*
 eclipse/.metadata/*
+eclipse/.metadata/.plugins/*
 run/journeymap/*
 run/saves/*
 *.fdt
@@ -44,6 +45,3 @@ run/crash-reports/*
 *.gz
 run/journeymap/colorpalette.json
 *.prefs
-*.prefs
-eclipse/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.debug.ui.prefs
-*.gz
