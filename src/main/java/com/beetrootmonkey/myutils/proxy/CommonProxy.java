@@ -2,6 +2,7 @@ package com.beetrootmonkey.myutils.proxy;
 
 import com.beetrootmonkey.myutils.Reference;
 import com.beetrootmonkey.myutils.block.ModBlocks;
+import com.beetrootmonkey.myutils.config.Config;
 import com.beetrootmonkey.myutils.config.ConfigLoader;
 import com.beetrootmonkey.myutils.crafting.ModRecipes;
 import com.beetrootmonkey.myutils.drops.DropHandlerBlock;
@@ -22,7 +23,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
-	
+
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigLoader.load(event);
 		ModItems.init();
@@ -36,13 +37,14 @@ public class CommonProxy {
 		ModItems.registerOres();
 		ModRecipes.addRecipes();
 		LootTableList.register(new ResourceLocation(Reference.MOD_ID, "inject/entities/horse"));
+		LootTableList.register(new ResourceLocation(Reference.MOD_ID, "inject/entities/spider"));
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {
 
 	}
-	
+
 	public void registerItemRenderer(Item item, int meta, String id) {
-		
+
 	}
 }

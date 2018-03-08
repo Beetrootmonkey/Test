@@ -6,6 +6,7 @@ import java.util.Random;
 import java.util.Set;
 
 import com.beetrootmonkey.myutils.Reference;
+import com.beetrootmonkey.myutils.config.Config;
 import com.beetrootmonkey.myutils.item.ModItems;
 
 import net.minecraft.entity.Entity;
@@ -41,9 +42,9 @@ public class DropHandlerEntity {
 
 		if (name.startsWith(prefix)) {
 			String file = name.substring(name.indexOf(prefix) + prefix.length());
-			if(file.equals("entities/horse")) {
+			if(file.equals("entities/horse") && Config.horseDrops) {
 				evt.getTable().addPool(getInjectPool(file));
-			} else if(file.equals("entities/spider")) {
+			} else if(file.equals("entities/spider") && Config.spiderDrops) {
 				evt.getTable().removePool("pool1");
 				evt.getTable().addPool(getInjectPool(file));
 			}

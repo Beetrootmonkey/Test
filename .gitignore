@@ -43,3 +43,7 @@ run/config/*
 run/crash-reports/*
 *.gz
 run/journeymap/colorpalette.json
+*.prefs
+*.prefs
+eclipse/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.debug.ui.prefs
+*.gz

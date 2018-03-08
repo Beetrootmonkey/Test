@@ -1,5 +1,8 @@
 package com.beetrootmonkey.myutils;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.beetrootmonkey.myutils.block.ModBlocks;
 import com.beetrootmonkey.myutils.client.ModTab;
 import com.beetrootmonkey.myutils.config.ConfigLoader;
@@ -27,6 +30,8 @@ public class MyUtils {
 
 	@Mod.Instance(Reference.MOD_ID)
 	public static MyUtils instance;
+	
+	public static final Logger logger = LogManager.getLogger(Reference.MOD_ID);
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
