@@ -18,20 +18,23 @@ Medium:
 [X] Custom tool material
 [X] Custom armor material
 [X] Make it so custom armor and tools can be repaired
-[ ] Ability to remove/alter existing recipes
-[ ] Custom config file
-[ ] Ingame config
+[X] Ability to remove/alter existing recipes
+[ ] Ability to remove/alter existing ore dict recipes
+[X] Custom config file
+[X] Ingame config
 [ ] Add blocks to world gen (Ore)
 [ ] Custom items with metadata
 [ ] Custom block with states
 [ ] Rebuild Skillz (give player mana, exp, money; give items $ value)
 [ ] Use recipes and items from other mods (without their API)
 [ ] Use stuff from other mods' APIs (like aspects from Thaumcraft)
-[ ] Use loot tables for entity/block drops (like a geode)
+[ ] Use loot tables for non-entity drops (like blocks or items -> on right clicking)
 [ ] Custom sounds
+[X] Use custom logger
 
 Hard:
 
+[ ] Custom recipe types
 [ ] Custom entities
 [ ] Custom block models
 [ ] Custom enchantments
