@@ -14,7 +14,9 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 import scala.actors.threadpool.Arrays;
 
 import java.util.ArrayList;
@@ -60,118 +62,159 @@ public class ModRecipes {
 
 		removeRecipe(Items.BREAD);
 		removeRecipe(ShapedRecipes.class, Blocks.TORCH, Items.COAL);
+		removeRecipe(ShapedRecipes.class, Blocks.TORCH, "stickWood");
 
 	}
-	
-	public static void removeRecipe(Object output) {
-		removeRecipe(null, output);
-	}
 
-	public static void removeRecipe(Class clazz, Object output, Object... input) {
-		ItemStack outputFilter = null;
+	public static void removeRecipe(Object output, Object... input) {
+		if (!isItem(output)) {
+			return;
+		}
 		List<ItemStack> inputFilter = new ArrayList<ItemStack>();
 		List<IRecipe> recipesToRemove = new ArrayList<IRecipe>();
 
-		if (output instanceof Block) {
-			Block block = (Block) output;
-			outputFilter = new ItemStack(Item.getItemFromBlock(block), 0);
-		} else if (output instanceof Item) {
-			Item item = (Item) output;
-			outputFilter = new ItemStack(item, 0);
-		} else if (output instanceof ItemStack) {
-			ItemStack stack = (ItemStack) output;
-			outputFilter = stack;
-		}
-
-		if (outputFilter == null) {
-			return;
-		}
-
-		for (Object in : input) {
-			if (in instanceof Block) {
-				Block block = (Block) in;
-				inputFilter.add(new ItemStack(Item.getItemFromBlock(block), 0));
-			} else if (in instanceof Item) {
-				Item item = (Item) in;
-				inputFilter.add(new ItemStack(item, 0));
-			} else if (in instanceof ItemStack) {
-				ItemStack item = (ItemStack) in;
-				inputFilter.add(item);
-			}
-		}
-
 		for (IRecipe recipe : CraftingManager.getInstance().getRecipeList()) {
 			if (inputFilter.isEmpty()) {
-				if (areItemStacksSame(outputFilter, recipe.getRecipeOutput())) {
+				if (equals(output, recipe.getRecipeOutput())) {
 					recipesToRemove.add(recipe);
-
 				}
 
 			} else {
-				if(clazz.isInstance(recipe)) {
-					if (clazz == ShapedRecipes.class) {
-						ShapedRecipes r = (ShapedRecipes) recipe;
-						// Check if output equals filter
-						boolean validRecipe = areItemStacksSame(outputFilter, r.getRecipeOutput());
-
-						if (validRecipe) {
-							// Iterate through all filters
-							for (ItemStack filter : inputFilter) {
-								// For each filter:
-								if (isItemStackInList(r.recipeItems, filter)) {
-									validRecipe = false;
-									break;
-								}
-							}
+				boolean validRecipe = equals(output, recipe.getRecipeOutput());
+				if (validRecipe) {
+					for (Object objIn : input) {
+						if (!isIngredient(recipe, objIn)) {
+							validRecipe = false;
+							break;
 						}
-
-						if (validRecipe) {
-							recipesToRemove.add(recipe);
-						}
-					} else if (clazz == ShapelessRecipes.class) {
-						ShapelessRecipes r = (ShapelessRecipes) recipe;
-						// Check if output equals filter
-						boolean validRecipe = areItemStacksSame(outputFilter, r.getRecipeOutput());
-
-						if (validRecipe) {
-							// Iterate through all filters
-							for (ItemStack filter : inputFilter) {
-								// For each filter:
-								if (isItemStackInList(r.recipeItems, filter)) {
-									validRecipe = false;
-									break;
-								}
-							}
-						}
-
-						if (validRecipe) {
-							recipesToRemove.add(recipe);
-						}
+					}
+					if (validRecipe) {
+						recipesToRemove.add(recipe);
 					}
 				}
 			}
 		}
 
 		CraftingManager.getInstance().getRecipeList().removeAll(recipesToRemove);
-		MyUtils.logger.info("Removed " + recipesToRemove.size() + " recipes with output " + outputFilter.getUnlocalizedName() + "!");
+		if (output instanceof String) {
+			MyUtils.logger.info("Removed " + recipesToRemove.size() + " recipes with output " + (String) output + "!");
+		} else {
+			MyUtils.logger.info("Removed " + recipesToRemove.size() + " recipes with output "
+					+ convertToStack(output).getUnlocalizedName() + "!");
+		}
+
 	}
 
-	public static boolean isItemStackInList(ItemStack[] list, ItemStack item) {
+	public static boolean isObjectInList(Object[] list, Object item) {
 		return isItemStackInList(Arrays.asList(list), item);
 	}
+	
+	public static boolean isObjectInList(List<Object> list, Object item) {
+		for (Object stack : list) {
+			if(isItem(stack) ) {
+				if (equals(stack, item)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	public static boolean isItemStackInList(List<ItemStack> list, Object item) {
+		for (Object stack : list) {
+			if(isItem(stack) ) {
+				if (equals(stack, item)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 
-	public static boolean isItemStackInList(List<ItemStack> list, ItemStack item) {
-		for (ItemStack stack : list) {
-			if (areItemStacksSame(stack, item)) {
+	public static boolean isIngredient(IRecipe recipe, Object item) {
+		if (recipe instanceof ShapedRecipes) {
+			if (!isObjectInList(((ShapedRecipes) recipe).recipeItems, item)) {
+				return false;
+			}
+			return true;
+		} else if (recipe instanceof ShapelessRecipes) {
+			if (!isItemStackInList(((ShapelessRecipes) recipe).recipeItems, item)) {
+				return false;
+			}
+			return true;
+		} else if (recipe instanceof ShapedOreRecipe) {
+			if (!isObjectInList(((ShapedOreRecipe) recipe).getInput(), item)) {
+				return false;
+			}
+			return true;
+		} else if (recipe instanceof ShapelessOreRecipe) {
+			if (!isObjectInList(((ShapelessOreRecipe) recipe).getInput(), item)) {
+				return false;
+			}
+			return true;
+		}
+
+		return false;
+	}
+
+	public static ItemStack convertToStack(Object object) {
+		if (object instanceof Block) {
+			return new ItemStack(Item.getItemFromBlock((Block) object), 0);
+		} else if (object instanceof Item) {
+			return new ItemStack((Item) object, 0);
+		} else if (object instanceof ItemStack) {
+			return (ItemStack) object;
+		}
+		return null;
+	}
+
+	public static boolean isItem(Object object) {
+		return object instanceof String || object instanceof Item || object instanceof ItemStack
+				|| object instanceof Block;
+	}
+
+	public static boolean equals(ItemStack stack1, ItemStack stack2) {
+		return stack1 != null && stack2 != null && stack1.getItem() == stack2.getItem()
+				&& (stack1.stackSize == 0 || stack2.stackSize == 0 || stack1.stackSize == stack2.stackSize)
+				&& stack1.getMetadata() == stack2.getMetadata();
+	}
+
+	public static boolean equals(Object object1, Object object2) {
+		if (!isItem(object1) || !isItem(object2)) {
+			return false;
+		}
+
+		if (object1 instanceof String) {
+			if (object2 instanceof String) {
+				return equals((String) object1, (String) object2);
+			} else {
+				return equals((String) object1, convertToStack(object2));
+			}
+		} else {
+			if (object2 instanceof String) {
+				return equals(convertToStack(object1), (String) object2);
+			} else {
+				return equals(convertToStack(object1), convertToStack(object2));
+			}
+		}
+	}
+
+	public static boolean equals(ItemStack stack, String ore) {
+		for(ItemStack entry : OreDictionary.getOres((String)ore)) {
+			entry.stackSize = 0;
+			if (equals(entry, stack)) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	public static boolean areItemStacksSame(ItemStack stack1, ItemStack stack2) {
-		return stack1 != null && stack2 != null && stack1.getItem() == stack2.getItem()
-				&& (stack1.stackSize == 0 || stack2.stackSize == 0 || stack1.stackSize == stack2.stackSize)
-				&& stack1.getMetadata() == stack2.getMetadata();
+	public static boolean equals(String ore, ItemStack stack) {
+		return equals(stack, ore);
+	}
+
+	public static boolean equals(String ore1, String ore2) {
+		return ore1.equals(ore2);
 	}
 }

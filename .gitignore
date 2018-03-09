@@ -45,3 +45,6 @@ run/crash-reports/*
 *.gz
 run/journeymap/colorpalette.json
 *.prefs
+build/tmp/*
+.classpath
+.gradle/*
