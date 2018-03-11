@@ -8,17 +8,25 @@ import com.beetrootmonkey.myutils.item.fuel.ItemFuel;
 import com.beetrootmonkey.myutils.item.materials.ModToolMaterials;
 import com.beetrootmonkey.myutils.item.materials.ModArmorMaterials;
 import com.beetrootmonkey.myutils.item.tools.ItemModAxe;
+import com.beetrootmonkey.spritecolorizer.SpriteColorizer;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.potion.PotionHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.ThaumcraftApiHelper;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectHelper;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.aspects.AspectSourceHelper;
 
 public class ModItems {
 
@@ -36,6 +44,8 @@ public class ModItems {
 	public static ItemModArmor chestplateCopper;
 	public static ItemModArmor leggingsCopper;
 	public static ItemModArmor bootsCopper;
+	
+	private static SpriteColorizer colorizer;
 
 	public static void init() {
 		ingotCopper = register(new ItemBase("ingotCopper"));
@@ -54,6 +64,8 @@ public class ModItems {
 		chestplateCopper = register(new ItemModArmor("chestplateCopper", ModArmorMaterials.COPPER, EntityEquipmentSlot.CHEST));
 		leggingsCopper = register(new ItemModArmor("leggingsCopper", ModArmorMaterials.COPPER, EntityEquipmentSlot.LEGS));
 		bootsCopper = register(new ItemModArmor("bootsCopper", ModArmorMaterials.COPPER, EntityEquipmentSlot.FEET));
+		
+		
 	}
 
 	private static <T extends Item> T register(T item) {
