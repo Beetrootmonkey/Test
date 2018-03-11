@@ -34,6 +34,8 @@ Medium:
 
 Hard:
 
+[ ] Use SpriteColorizer to color templates on the fly in addition to generating json files
+    -> automate registering items
 [ ] Custom recipe types
 [ ] Custom entities
 [ ] Custom block models
