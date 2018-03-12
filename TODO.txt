@@ -23,6 +23,7 @@ Medium:
 [X] Custom config file
 [X] Ingame config
 [X] Add blocks to world gen (Ore)
+[ ] Place ore efficiently in blocks other than stone (sandstone, obsidian?, sand, gravel, dirt?, endstone, netherrack, etc)
 [ ] Custom items with metadata
 [ ] Custom block with states
 [ ] Rebuild Skillz (give player mana, exp, money; give items $ value)
