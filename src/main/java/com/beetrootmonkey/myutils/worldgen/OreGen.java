@@ -12,6 +12,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenDungeons;
+import net.minecraft.world.gen.feature.WorldGenGlowStone1;
 import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.feature.WorldGenLiquids;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -24,7 +25,7 @@ public class OreGen implements IWorldGenerator {
 	private WorldGenerator copper_ore_end = new WorldGenMinable(ModBlocks.oreCopper.getDefaultState(), 8, new DefaultEndOreGenPredicate());
 	private WorldGenerator copper_ore_nether = new WorldGenMinable(ModBlocks.oreCopper.getDefaultState(), 8, new DefaultNetherOreGenPredicate());
 	
-	private WorldGenerator test = new WorldGenLakes(Blocks.GLOWSTONE);
+	private WorldGenerator test = new WorldGenGlowStone1();
 
 	private void runGenerator(WorldGenerator generator, World world, Random rand, int chunk_X, int chunk_Z,
 			int chancesToSpawn, int minHeight, int maxHeight) {
