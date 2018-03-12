@@ -1,2 +1,0 @@
-call gradlew eclipse
-pause
