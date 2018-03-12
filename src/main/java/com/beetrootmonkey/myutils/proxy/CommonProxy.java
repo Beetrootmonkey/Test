@@ -9,6 +9,7 @@ import com.beetrootmonkey.myutils.drops.DropHandlerBlock;
 import com.beetrootmonkey.myutils.drops.DropHandlerEntity;
 import com.beetrootmonkey.myutils.item.ModItems;
 import com.beetrootmonkey.myutils.item.fuel.FuelHandler;
+import com.beetrootmonkey.myutils.worldgen.OreGen;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -38,6 +39,7 @@ public class CommonProxy {
 		ModRecipes.addRecipes();
 		LootTableList.register(new ResourceLocation(Reference.MOD_ID, "inject/entities/horse"));
 		LootTableList.register(new ResourceLocation(Reference.MOD_ID, "inject/entities/spider"));
+		GameRegistry.registerWorldGenerator(new OreGen(),  0);
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {

@@ -43,7 +43,7 @@ run/usercache.json
 run/config/*
 run/crash-reports/*
 *.gz
-run/journeymap/colorpalette.json
+run/journeymap/*
 *.prefs
 build/tmp/*
 .classpath

@@ -19,10 +19,10 @@ Medium:
 [X] Custom armor material
 [X] Make it so custom armor and tools can be repaired
 [X] Ability to remove/alter existing recipes
-[ ] Ability to remove/alter existing ore dict recipes
+[X] Ability to remove/alter existing ore dict recipes
 [X] Custom config file
 [X] Ingame config
-[ ] Add blocks to world gen (Ore)
+[X] Add blocks to world gen (Ore)
 [ ] Custom items with metadata
 [ ] Custom block with states
 [ ] Rebuild Skillz (give player mana, exp, money; give items $ value)
@@ -44,6 +44,7 @@ Hard:
 [ ] Layered item sprites
 [ ] Layered block textures
 [ ] Add custom logic/structures to world gen (trees, flowers)
+[ ] Alter existing structures (like glowstone, dungeons) -> https://github.com/jabelar/ExampleMod-1.12/commit/cd7ade2e18cc899c6a8f6a9abc497c65ae1a5c43
 [ ] Custom tile entities (double furnace, bigger chest) + GUI
 [ ] Custom HUD elements (mana bar, money)
 [ ] Custom GUI (dialogs)
