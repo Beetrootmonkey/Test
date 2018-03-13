@@ -49,6 +49,3 @@ build/tmp/*
 .classpath
 .gradle/*
 Test_Client.launch
-.classpath
-.classpath
-.project
