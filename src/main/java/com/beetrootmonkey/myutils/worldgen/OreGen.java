@@ -68,7 +68,7 @@ public class OreGen implements IWorldGenerator {
 		case 1: // End
 			// this.runGenerator(copper_ore_end, world, random, chunkX, chunkZ, 20, 0, 64);
 		case -1: // Nether
-			this.runGenerator(glowstone, world, random, chunkX, chunkZ, 10, 40, 120);
+//			this.runGenerator(glowstone, world, random, chunkX, chunkZ, 10, 40, 120);
 		case 6: // Aroma Mining Dimension
 			// this.runGenerator(copper_ore_overworld, world, random, chunkX, chunkZ, 20, 0,
 			// 128);
