@@ -38,6 +38,8 @@ public class ModRecipes {
 				ModItems.ingotCopper);
 		GameRegistry.addRecipe(new ItemStack(ModItems.leggingsCopper), "###", "# #", "# #", '#', ModItems.ingotCopper);
 		GameRegistry.addRecipe(new ItemStack(ModItems.bootsCopper), "# #", "# #", '#', ModItems.ingotCopper);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.gold_brick), "##", "##", '#', Items.GOLD_INGOT);
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.GOLD_INGOT, 4), ModBlocks.gold_brick);
 
 		if (Config.fuelPellet) {
 			GameRegistry.addShapelessRecipe(new ItemStack(ModItems.pelletFuel, 8), new ItemStack(Items.COAL));

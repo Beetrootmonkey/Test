@@ -11,6 +11,7 @@ import com.beetrootmonkey.myutils.block.BlockOre;
 import com.beetrootmonkey.myutils.block.ModBlocks;
 
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -32,7 +33,9 @@ public class OreGen implements IWorldGenerator {
 
 	Map<IBlockState, ConditionalBlockState> copperMap = initCopperMap();
 	private WorldGenerator copper_ore_overworld = new DefaultWorldGenMinable(copperMap, 20);
-	private WorldGenerator glowstone = new WorldGenGlowStoneCrystal();
+	private WorldGenerator gold_brick_nether = new WorldGenMinable(ModBlocks.gold_brick.getDefaultState(), 8,
+			BlockMatcher.forBlock(Blocks.NETHER_BRICK));
+	// private WorldGenerator glowstone = new WorldGenGlowStoneCrystal();
 	// private WorldGenerator copper_ore_overworld = new
 	// WorldGenMinable(ModBlocks.oreCopper.getDefaultState(), 8);
 	// private WorldGenerator copper_ore_end = new
@@ -42,7 +45,7 @@ public class OreGen implements IWorldGenerator {
 	// WorldGenMinable(ModBlocks.oreCopper.getDefaultState(), 8, new
 	// DefaultNetherOreGenPredicate());
 
-	private WorldGenerator test = new WorldGenGlowStone1();
+	// private WorldGenerator test = new WorldGenGlowStone1();
 
 	private void runGenerator(WorldGenerator generator, World world, Random rand, int chunk_X, int chunk_Z,
 			int chancesToSpawn, int minHeight, int maxHeight) {
@@ -68,7 +71,7 @@ public class OreGen implements IWorldGenerator {
 		case 1: // End
 			// this.runGenerator(copper_ore_end, world, random, chunkX, chunkZ, 20, 0, 64);
 		case -1: // Nether
-//			this.runGenerator(glowstone, world, random, chunkX, chunkZ, 10, 40, 120);
+			this.runGenerator(gold_brick_nether, world, random, chunkX, chunkZ, 10, 0, 120);
 		case 6: // Aroma Mining Dimension
 			// this.runGenerator(copper_ore_overworld, world, random, chunkX, chunkZ, 20, 0,
 			// 128);

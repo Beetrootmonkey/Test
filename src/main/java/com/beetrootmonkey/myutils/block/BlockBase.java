@@ -8,29 +8,40 @@ import net.minecraft.item.ItemBlock;
 import com.beetrootmonkey.myutils.MyUtils;
 import com.beetrootmonkey.myutils.item.ItemModelProvider;
 
-public class BlockBase extends Block implements ItemModelProvider{
+public class BlockBase extends Block implements ItemModelProvider {
 
 	protected String name;
-	
+
 	public BlockBase(Material materialIn, String name) {
 		super(materialIn);
 		this.name = name;
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		 setCreativeTab(MyUtils.creativeTab);
+		setCreativeTab(MyUtils.creativeTab);
 	}
-	
+
 	@Override
 	public void registerItemModel(Item itemBlock) {
 		MyUtils.proxy.registerItemRenderer(itemBlock, 0, name);
-		
-	}
-	
-	 @Override
-	 public BlockBase setCreativeTab(CreativeTabs tab) {
-		 super.setCreativeTab(tab);
-		 return this;
-	 }
 
-	
+	}
+
+	@Override
+	public BlockBase setCreativeTab(CreativeTabs tab) {
+		super.setCreativeTab(tab);
+		return this;
+	}
+
+	@Override
+	public BlockBase setResistance(float resistance) {
+		super.setResistance(resistance);
+		return this;
+	}
+
+	@Override
+	public BlockBase setHardness(float hardness) {
+		super.setHardness(hardness);
+		return this;
+	}
+
 }

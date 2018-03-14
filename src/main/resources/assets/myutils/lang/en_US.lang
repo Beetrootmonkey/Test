@@ -17,6 +17,8 @@ item.bootsCopper.name=Copper Boots
 
 # Blocks
 tile.oreCopper.name=Copper Ore
+tile.gold_brick.name=Gold Brick
+tile.glowstone.name=Glowstone
 
 # Mod title
 itemGroup.myutils=MyUtils

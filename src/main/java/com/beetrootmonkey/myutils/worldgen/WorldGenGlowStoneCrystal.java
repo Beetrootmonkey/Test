@@ -1,6 +1,9 @@
 package com.beetrootmonkey.myutils.worldgen;
 
 import java.util.Random;
+
+import com.beetrootmonkey.myutils.block.ModBlocks;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
@@ -22,7 +25,7 @@ public class WorldGenGlowStoneCrystal extends WorldGenerator
         }
         else
         {
-            worldIn.setBlockState(position, Blocks.GLOWSTONE.getDefaultState(), 2);
+            worldIn.setBlockState(position, ModBlocks.glowstone.getDefaultState(), 2);
 
             for (int i = 0; i < 1500; ++i)
             {
@@ -34,7 +37,7 @@ public class WorldGenGlowStoneCrystal extends WorldGenerator
 
                     for (EnumFacing enumfacing : EnumFacing.values())
                     {
-                        if (worldIn.getBlockState(blockpos.offset(enumfacing)).getBlock() == Blocks.GLOWSTONE)
+                        if (worldIn.getBlockState(blockpos.offset(enumfacing)).getBlock() == ModBlocks.glowstone)
                         {
                             ++j;
                         }
@@ -47,7 +50,7 @@ public class WorldGenGlowStoneCrystal extends WorldGenerator
 
                     if (j == 1)
                     {
-                        worldIn.setBlockState(blockpos, Blocks.GLOWSTONE.getDefaultState(), 2);
+                        worldIn.setBlockState(blockpos, ModBlocks.glowstone.getDefaultState(), 2);
                     }
                 }
             }

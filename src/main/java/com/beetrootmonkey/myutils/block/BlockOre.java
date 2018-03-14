@@ -45,10 +45,4 @@ public class BlockOre extends BlockBase {
 		return random.nextInt(fortune + 1) + 1;
 	}
 
-	@Override
-	public BlockOre setCreativeTab(CreativeTabs tab) {
-		super.setCreativeTab(tab);
-		return this;
-	}
-
 }

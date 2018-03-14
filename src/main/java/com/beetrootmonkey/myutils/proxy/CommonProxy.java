@@ -10,6 +10,7 @@ import com.beetrootmonkey.myutils.drops.DropHandlerEntity;
 import com.beetrootmonkey.myutils.item.ModItems;
 import com.beetrootmonkey.myutils.item.fuel.FuelHandler;
 import com.beetrootmonkey.myutils.worldgen.OreGen;
+import com.beetrootmonkey.myutils.worldgen.WorldGenHandler;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -31,6 +32,8 @@ public class CommonProxy {
 		ModBlocks.init();
 		MinecraftForge.EVENT_BUS.register(new DropHandlerEntity());
 		MinecraftForge.EVENT_BUS.register(new DropHandlerBlock());
+		MinecraftForge.EVENT_BUS.register(new WorldGenHandler());
+		MinecraftForge.TERRAIN_GEN_BUS.register(new WorldGenHandler());
 		GameRegistry.registerFuelHandler(new FuelHandler());
 	}
 
