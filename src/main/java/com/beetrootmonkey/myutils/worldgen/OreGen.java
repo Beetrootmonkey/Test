@@ -6,8 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import com.beetrootmonkey.myutils.block.BlockBase;
-import com.beetrootmonkey.myutils.block.BlockOre;
 import com.beetrootmonkey.myutils.block.ModBlocks;
 
 import net.minecraft.block.state.IBlockState;
@@ -19,14 +17,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenDungeons;
-import net.minecraft.world.gen.feature.WorldGenGlowStone1;
-import net.minecraft.world.gen.feature.WorldGenLakes;
-import net.minecraft.world.gen.feature.WorldGenLiquids;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.common.BiomeManager.BiomeType;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class OreGen implements IWorldGenerator {
