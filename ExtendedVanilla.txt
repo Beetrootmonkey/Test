@@ -1,0 +1,5 @@
+Things vanilla is lacking:
+[ ] More different rocks (marble, basalt, limestone)
+[ ] Nicer textures for andesite, diorite, granite
+[ ] Ore in rocks other than plain stone
+[ ] Mortar (made from sand and limestone) that is needed for all bricks
