@@ -72,3 +72,4 @@ Mod Ideas:
 [ ] Mod that gives items $ value and allows  players to sell and buy items (similar to EE)
 [ ] Bridge for Botania/Thaumcraft (similar to Forbidden Magic)
 [ ] Bridge for Immersive Engineering/Thaumcraft (similar to my old Thaumic Engineering)
+[ ] Ores in more blocks, like nether fortress, soul sand, prismarine
